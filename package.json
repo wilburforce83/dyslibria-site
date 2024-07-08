@@ -1,0 +1,16 @@
+{
+  "name": "dyslibria-site",
+  "version": "1.0.0",
+  "description": "Static site for Dyslibria",
+  "main": "index.js",
+  "scripts": {
+  "build": "tailwindcss -o dist/styles.css --minify"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}

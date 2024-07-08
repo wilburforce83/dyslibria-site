@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslibria ePub Bionic Converter</title>
+    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="stylesheet" href="all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="sticky top-0 bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-lg flex items-center">
+                <img src="images/logo.svg" alt="Dyslibria Logo" class="h-8 mr-3">
+                Open beta
+            </a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#features" class="text-gray-600 hover:text-gray-800">Features</a></li>
+                    <li><a href="#installation" class="text-gray-600 hover:text-gray-800">Installation</a></li>
+                    <li><a href="#documentation" class="text-gray-600 hover:text-gray-800">Docs</a></li>
+                    <li><a href="https://github.com/wilburforce83/bionic-epub-convertor">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="hero">
+            <h1 class="text-4xl font-bold text-center mb-4">Welcome to Dyslibria</h1>
+            <p class="text-lg text-center mb-8">Enhance your ePub reading experience with our bionic conversion tools designed for accessibility.</p>
+        </section>
+
+        <section id="features" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Features</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Example feature card -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <i class="fa fa-file-alt fa-2x mb-4 mx-auto text-center block" aria-hidden="true"></i>
+                    <p class="text-center">Easily Convert ePub Files</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <i class="fa fa-universal-access fa-2x mb-4 mx-auto text-center block" aria-hidden="true"></i>
+                    <p class="text-center">Accessibility Features</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <i class="fa fa-rocket fa-2x mb-4 mx-auto text-center block" aria-hidden="true"></i>
+                    <p class="text-center">Fast and Efficient</p>
+                </div>
+                <!-- Add more feature cards as necessary -->
+            </div>
+        </section>
+
+        <section id="installation" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Installation</h2>
+            <div class="bg-white rounded-lg shadow p-6">
+                <p class="mb-4">Install our software by following these steps:</p>
+                <pre class="bg-gray-100 p-4 rounded"><code>
+# Install Node.js
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Clone and run
+git clone https://github.com/yourgithubrepo.git
+cd yourrepo
+npm install
+npm start
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="documentation" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Documentation</h2>
+            <div class="bg-white rounded-lg shadow p-6">
+                <p class="mb-4">Detailed docs are available on our GitHub Wiki.</p>
+                <a href="https://github.com/wilburforce83/bionic-epub-convertor/wiki" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">Visit the Docs</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white shadow-md py-4 text-center mt-12">
+        <p>Copyright © 2024 Dyslibria. All rights reserved.</p>
+    </footer>
+</body>
+</html>
