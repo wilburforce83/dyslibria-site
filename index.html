@@ -1,144 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dyslibria ePub Bionic Converter</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <style>
-        .logo-image {
-    height: 40px; /* Adjust the height as needed */
-    width: auto; /* Adjust the width as needed, or keep auto to maintain aspect ratio */
+      .logo-image {
+        height: 40px; /* Adjust the height as needed */
+        width: auto; /* Adjust the width as needed, or keep auto to maintain aspect ratio */
+      }
 
-    .header-container {
-    position: relative;
-    color: white;
-    padding: 50px 20px;
-    background-size: cover;
-    background-position: center;
-}
+      .header-container {
+        position: relative;
+        color: rgb(20, 3, 3);
+        padding: 50px 20px;
+        background-image: url("images/hero.jpg"); /* Ensure the file path is correct */
+        background-size: cover;
+        background-position: center;
+      }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.7;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.7);
-}
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
-}
+        background-size: cover;
+        background-position: center;
+        opacity: 0.25ß;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      .text-white {
+        color: white;
+      }
+      .uk-card .uk-card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .uk-card .uk-icon {
+        margin-bottom: 15px;
+        align-items: center;
+        justify-content: center;
+      }
+      .icon-primary {
+        color: #1e87f0; /* UIKit primary color */
+      }
+      .icon-black {
+        color: black; /* UIKit primary color */
+      }
+
+      #readme-content h1,
+      #readme-content h2,
+      #readme-content h3 {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+      #readme-content p {
+        margin-bottom: 1em;
+      }
+      #readme-content pre {
+        padding: 1em;
+        overflow: auto;
+      }
     </style>
-</head>
-<body>
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-        <div class="uk-navbar-left">
-            <a href="#" class="uk-navbar-item uk-logo">
-                <img class="uk-margin-small-right logo-image" src="images/logo.svg" alt="Dyslibria Logo">Open beta
+  </head>
+  <body>
+    <div
+      class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade header-container"
+      uk-height-viewport
+    >
+      <div class="overlay"></div>
+      <div class="uk-width-1-1">
+        <div class="uk-container">
+          <h1
+            class="uk-heading-medium uk-margin-remove-top uk-text-center text-white"
+          >
+            <b>Wel</b>come <b>to Dysli</b>bria
+          </h1>
+          <p class="uk-text-center text-white">
+            Unlock an easier reading experience with my open source bionic style
+            epub converter and library.
+          </p>
+          <div class="uk-text-center uk-margin-large-top">
+            <a
+              href="#readme-content"
+              class="uk-button uk-button-primary uk-button-large"
+              >Get Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="uk-navbar-container uk-navbar-transparent"
+      uk-navbar
+      uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
+    >
+      <div class="uk-navbar-left">
+        <a href="#" class="uk-navbar-item uk-logo">
+          <img
+            class="uk-margin-medium-left logo-image"
+            src="images/logo.svg"
+            alt="Dyslibria Logo"
+          />
+        </a>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-margin-medium-right uk-navbar-nav">
+          <li>
+            <a href="https://github.com/wilburforce83/bionic-epub-convertor">
+              <span class="icon-primary" uk-icon="icon: github"></span>
             </a>
-        </div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#documentation">Docs</a></li>
-                <li><a href="https://github.com/wilburforce83/bionic-epub-convertor">
-                    <span uk-icon="icon: github"></span>
-                </a></li>
-            </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade header-container" uk-height-viewport>
-        <div class="uk-width-1-1">
-            <div class="uk-container">
-                <h1 class="uk-heading-medium uk-margin-remove-top uk-text-center"><b>Wel</b>come <b>to Dysli</b>bria</h1>
-                <p class="uk-text-center">Unlock an easier reading experience with my open source bionic style epub converter and library.</p>
-                <div class="uk-text-center uk-margin-large-top">
-                    <a href="#installation" class="uk-button uk-button-primary uk-button-large">Get Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="uk-container uk-margin-large-top">
-        <h2 class="uk-text-center uk-margin-large-bottom">Features</h2>
-        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: code; ratio: 2"></span>
-                    <p>Fully open source; self-host on a Raspberry Pi, VPS, or another home server setup.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: upload; ratio: 2"></span>
-                    <p>Bulk conversion of epub files into bionic text either via the web portal or drag and drop into the upload directory.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: book; ratio: 2"></span>
-                    <p>Editable processed folder; send processed files directly into third-party applications such as Calibre for seamless integration.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: world; ratio: 2"></span>
-                    <p>OPDS out of the box; connect to your favourite e-reader app.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: server; ratio: 2"></span>
-                    <p>WebDav server built-in for any archaic users out there!</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <span uk-icon="icon: users; ratio: 2"></span>
-                    <p>Built-in web portal for uploading books, viewing library, searching for books, and reading online.</p>
-                </div>
-            </div>
+      <h2 class="uk-text-center uk-margin-large-bottom">Features</h2>
+      <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: code; ratio: 2"></span>
+            <p>
+              Fully open source; self-host on a Raspberry Pi, VPS, or another
+              home server setup.
+            </p>
+          </div>
         </div>
-    </div>
-
-    <div class="uk-container uk-margin-large-top">
-        <h2 class="uk-text-center uk-margin-large-bottom">What is Bionic Text?</h2>
-        <p>Bionic text refers to a style of text presentation designed to enhance readability for people with visual processing challenges such as dyslexia, ADHD, ADD, and broader neurodivergent audiences. This method improves focus and reading speed by optimizing text appearance without altering the text's integrity, making it more accessible and easier to process.</p>
-    </div>
-
-    <div class="uk-container uk-margin-large-top">
-        <h2 class="uk-text-center uk-margin-large-bottom">Gallery</h2>
-        <div class="uk-child-width-1-2@m" uk-grid uk-lightbox="animation: slide">
-            <div>
-                <a href="images/desktop/example1.jpg" class="uk-inline">
-                    <img src="images/desktop/example1.jpg" alt="Desktop Example">
-                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <p>Desktop Interface</p>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="images/mobile/example1.jpg" class="uk-inline">
-                    <img src="images/mobile/example1.jpg" alt="Mobile Example">
-                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <p>Mobile Interface</p>
-                    </div>
-                </a>
-            </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: upload; ratio: 2"></span>
+            <p>
+              Bulk conversion of epub files into bionic text either via the web
+              portal or drag and drop into the upload directory.
+            </p>
+          </div>
         </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: book; ratio: 2"></span>
+            <p>
+              Editable processed folder; send processed files directly into
+              third-party applications such as Calibre for seamless integration.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: world; ratio: 2"></span>
+            <p>OPDS out of the box; connect to your favourite e-reader app.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: server; ratio: 2"></span>
+            <p>WebDav server built-in for any archaic users out there!</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="icon-primary"uk-icon="icon: users; ratio: 2"></span>
+            <p>
+              Built-in web portal for uploading books, viewing library,
+              searching for books, and reading online.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="uk-padding-large"></div>
+    <div class="uk-card uk-card-default uk-card-body">
+      <div class="uk-container uk-margin-large-top">
+        <h2 class="uk-text-center uk-margin-large-bottom">
+          What is Bionic Text?
+        </h2>
+        <p>
+          <b>Bio</b>nic <b>te</b>xt <b>ref</b>ers <b>t</b>o <b>a</b>
+          <b>sty</b>le <b>o</b>f <b>te</b>xt <b>presen</b>tation <b>desi</b>gned
+          <b>t</b>o <b>enha</b>nce <b>readab</b>ility <b>fo</b>r <b>peo</b>ple
+          <b>wi</b>th <b>vis</b>ual <b>proce</b>ssing <b>chall</b>enges
+          <b>su</b>ch <b>a</b>s <b>dysle</b>xia, <b>ADH</b>D, <b>AD</b>D,
+          <b>an</b>d <b>broa</b>der <b>neurodi</b>vergent <b>audie</b>nces.
+          <b>Th</b>is <b>met</b>hod <b>impr</b>oves <b>foc</b>us <b>an</b>d
+          <b>read</b>ing <b>spe</b>ed <b>b</b>y <b>optim</b>izing <b>te</b>xt
+          <b>appea</b>rance <b>with</b>out <b>alte</b>ring <b>th</b>e
+          <b>tex</b>t's <b>integ</b>rity, <b>mak</b>ing <b>i</b>t <b>mo</b>re
+          <b>acces</b>sible <b>an</b>d <b>eas</b>ier <b>t</b>o <b>proc</b>ess.
+        </p>
+      </div>
+    </div>
+    <div class="uk-padding-large"></div>
+    <div class="uk-container uk-margin-large-top">
+      <h2 class="uk-text-center uk-margin-large-bottom">Gallery</h2>
+      <div class="uk-child-width-1-2@m" uk-grid uk-lightbox="animation: slide">
+        <div>
+          <a href="images/desktop/example1.jpg" class="uk-inline">
+            <img src="images/desktop/example1.jpg" alt="Desktop Example" />
+            <div
+              class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom"
+            >
+              <p>Desktop Interface</p>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a href="images/mobile/example1.jpg" class="uk-inline">
+            <img src="images/mobile/example1.jpg" alt="Mobile Example" />
+            <div
+              class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom"
+            >
+              <p>Mobile Interface</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="uk-padding-large"></div>
+      <div class="uk-container uk-margin-large-top">
+        <h2 class="uk-text-center uk-margin-large-bottom">
+          Install Instructions
+        </h2>
+        <div
+          id="readme-content"
+          class="uk-card uk-card-default uk-card-body"
+        ></div>
+      </div>
+      <div class="uk-padding-large"></div>
+    <script>
+      // Fetch and display the README.md content from GitHub
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fetch and display the README.md content from GitHub
+        fetch(
+          "https://raw.githubusercontent.com/wilburforce83/bionic-epub-convertor/main/README.md"
+        )
+          .then((response) => response.text())
+          .then((text) => {
+            const readmeContent = marked.parse(text);
+            document.getElementById("readme-content").innerHTML = readmeContent;
+          })
+          .catch((error) =>
+            console.error("Error fetching the README.md:", error)
+          );
+      });
+    </script>
 
     <!-- Include installation instructions section -->
-
-   
-</body>
+  </body>
 </html>
